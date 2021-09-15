@@ -1,0 +1,308 @@
+body {
+  background-color: #f6f5f5;
+  font-size: 0.625rem;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.settings {
+  position: absolute;
+  top: 4%;
+  left: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.hud {
+  font-size: 3rem;
+  color: #1687a7;
+  position: absolute;
+  right: 2%;
+  top: 4%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.main-text-container {
+  position: absolute;
+  top: 16vh;
+  left: 50%;
+  width: 75%;
+  max-height: 6rem;
+  overflow: hidden;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  font-size: 3rem;
+  color: #1687a7;
+  transform: translateX(-50%);
+  transition: all 1s;
+}
+
+.settings:hover {
+  cursor: pointer;
+}
+
+.settings path {
+  transition: all .5s;
+}
+
+.heading {
+  font-size: 2rem;
+}
+
+.button-settings-container:hover .settings-content-container {
+  display: block;
+}
+
+.settings-content {
+  min-width: 10rem;
+  z-index: 1;
+  background-color: #f1f1f1;
+  clip-path: polygon(6% 0, 100% 0%, 100% 100%, 6% 100%, 6% 18%, 0% 12%, 6% 6%);
+}
+
+.settings-content-container {
+  display: none;
+  position: absolute;
+  transform: translateX(20%) translateY(38%);
+  filter: drop-shadow(-1px 2px 3px rgba(0, 0, 0, 0.2));
+  color: #a5a5a5;
+  font-size: 1.6rem;
+  z-index: 1;
+}
+
+.settings-content p {
+  margin: 0;
+}
+
+.settings-content .settings-content-text:hover {
+  font-size: 1.8rem;
+  color: #1687a7;
+}
+
+.button-settings:hover path {
+  fill: #1687a7;
+}
+
+.button-play:hover path {
+  fill: #1687a7;
+}
+
+.button-play {
+  margin-left: .3rem;
+}
+
+.button-pause {
+  margin-left: .3rem;
+}
+
+.button-keyboard {
+  margin-left: .1rem;
+}
+
+.button-pause:hover rect {
+  fill: #1687a7;
+}
+
+
+.button-keyboard:hover .button-keyboard-surface {
+  fill: #1687a7;
+}
+
+.button-keyboard:hover .button-keyboard-text {
+  fill: #fdffff;
+}
+
+.keyboard {
+  transition: all .8s;
+}
+
+.hide-keyboard {
+  animation: hideKeyboard 0.5s forwards;
+}
+
+.show-keyboard {
+  animation: showKeyboard 0.5s forwards cubic-bezier(.55,-0.07,.37,1.18);
+}
+
+.main-container {
+  position: absolute;
+  height: 94vh;
+  width: 86%;
+  overflow: hidden;
+}
+
+.word {
+  position: absolute;
+  font-size: 2.5rem;
+  color: #1687a7;
+  animation: fallDown 40s forwards linear;
+}
+
+.word-normal {
+  margin-left: 2rem;
+  font-size: 2.5rem;
+  color: #1687a7;
+}
+
+.score-container, .wpm-hud {
+  font-size: 1.6rem;
+  color: #a5a5a5;
+}
+
+.text-container {
+  font-size: 2rem;
+  color: #d3e0ea;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: "";
+}
+
+.wpm-content {
+  width: 100%;
+  color: #a5a5a5;
+  font-size: 2.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wpm-overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(218, 218, 218, 0.8);
+  z-index: 2;
+}
+
+.wpm-reset-game {
+  font-size: 2rem;
+  height: 3.3rem;
+  background-color: #1687a7;
+  border-radius: 5%;
+  cursor: pointer;
+  color: white;
+  border: none;
+  padding: 0 2rem;
+  outline: none;
+  box-shadow: 2px 2px 4px #888888;
+}
+
+.keyboard {
+  width: 57vw;
+  height: auto;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.paused {
+  -webkit-animation-play-state:paused;
+  -moz-animation-play-state:paused;
+  -o-animation-play-state:paused; 
+  animation-play-state:paused;
+}
+
+.keyboard-title {
+  font-size: 2rem;
+  color: #1687a7;
+}
+
+.button-keyboard:hover + .tip {
+  display: block;
+}
+
+.button-control:hover + .tip {
+  display: block;
+}
+
+.button-settings:hover + .tip {
+  display: block;
+}
+
+.tip {
+  position: fixed;
+  margin-left: 3rem;
+  display: none;
+  color: #a5a5a5;
+  font-size: 1.6rem;
+}
+
+.blink {
+  animation: blink .5s infinite;
+}
+
+@keyframes fallDown {
+  0% {
+    transform: translateY(-10vh);
+  }
+  100% {
+    transform: translateY(94.1vh);
+  }
+}
+
+@keyframes hideKeyboard {
+  100% {
+    transform: translateY(120vh);
+  }
+}
+
+@keyframes showKeyboard {
+  0% {
+    transform: translateY(120vh);
+  }
+  100% {
+    transform: translateY(0vh);
+  }
+}
+
+@keyframes blink {
+  0% {
+    fill: #fffb00;
+  }
+  100% {
+    fill: #E6E6E6;
+  }
+}
+
+@media (min-width: 600px) { 
+ 
+}
+
+@media (min-width: 900px) { 
+  .word-normal {
+    margin-left: 2rem;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1200px) { 
+  .word-normal {
+    font-size: 2.5rem;
+    margin-left: 2rem;
+  }
+}
+
+@media (min-width: 1800px) {
+  .word-normal {
+    font-size: 3rem;
+    margin-left: 2rem;
+  }
+}
+
