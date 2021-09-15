@@ -240,24 +240,6 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         style: HIGHLIGHT_STYLES[9]
     },
     {
-        list: buildConfigList(['superscripts1', 'superscripts2', 'superscripts3']),
-        secondaryList: [
-            {
-                list: buildConfigList(['mainSymbolsLong', 'mainSymbolsShort']),
-                relation: AND,
-                searchIndexIncrement: -1,
-            }, 
-            {
-                list: buildConfigList(['subscripts1', 'subscripts2', 'subscripts3', 'subscripts4', 'subscripts5', 'subscripts6', 'subscripts7']),
-                relation: NOT,
-                searchIndexIncrement: 1,
-            }
-        ],
-        startIndexIncrement: -1,
-        endIndexIncrement: 1,
-        style: HIGHLIGHT_STYLES[1]
-    },
-    {
         list: WORD_GROUPS.mainSymbolsLong,
         secondaryList: [
             {
@@ -273,24 +255,6 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         ],
         endIndexIncrement: 2,
         style: HIGHLIGHT_STYLES[2]
-    },
-    {
-        list: buildConfigList(['subscripts2', 'subscripts3', 'subscripts4', 'subscripts5', 'subscripts6', 'subscripts7']),
-        secondaryList: [
-            {
-                list: buildConfigList(['mainSymbolsLong', 'mainSymbolsShort']),
-                relation: AND,
-                searchIndexIncrement: -1,
-            }, 
-            {
-                list: buildConfigList(['superscripts1', 'subscripts5']),
-                relation: NOT,
-                searchIndexIncrement: 1,
-            }
-        ],
-        startIndexIncrement: -1,
-        endIndexIncrement: 1,
-        style: HIGHLIGHT_STYLES[1]
     },
     {
         list: WORD_GROUPS.mainSymbolsShort,
@@ -535,24 +499,6 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         style: HIGHLIGHT_STYLES[25]
     },
     {
-        list: buildConfigList(['superscripts1']),
-        secondaryList: [
-            {
-                list: buildConfigList(['subscripts1']),
-                relation: AND,
-                searchIndexIncrement: -1,
-            }, 
-            {
-                list: buildConfigList(['superscripts3', 'superscripts3']),
-                relation: AND,
-                searchIndexIncrement: -2,
-            },
-        ],
-        startIndexIncrement: -2,
-        endIndexIncrement: 1,
-        style: HIGHLIGHT_STYLES[1]
-    },
-    {
         list: buildConfigList(['superscripts2']),
         secondaryList: [
             {
@@ -633,29 +579,6 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         style: HIGHLIGHT_STYLES[12]
     },
     {
-        list: buildConfigList(['subscripts3', 'subscripts4', 'subscripts5']),
-        secondaryList: [
-            {
-                list: buildConfigList(['subscripts1']),
-                relation: AND,
-                searchIndexIncrement: -1,
-            }, 
-            {
-                list: buildConfigList(['superscripts2']),
-                relation: AND,
-                searchIndexIncrement: -2,
-            },
-            {
-                list: buildConfigList(['superscripts1', 'subscripts5']),
-                relation: NOT,
-                searchIndexIncrement: 1,
-            }
-        ],
-        startIndexIncrement: -2,
-        endIndexIncrement: 1,
-        style: HIGHLIGHT_STYLES[1]
-    },
-    {
         list: buildConfigList(['subscripts1']),
         secondaryList: [
             {
@@ -724,29 +647,6 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         style: HIGHLIGHT_STYLES[16]
     },
     {
-        list: buildConfigList(['subscripts3', 'subscripts4', 'subscripts5']),
-        secondaryList: [
-            {
-                list: buildConfigList(['subscripts1']),
-                relation: AND,
-                searchIndexIncrement: -1,
-            }, 
-            {
-                list: buildConfigList(['superscripts3']),
-                relation: AND,
-                searchIndexIncrement: -2,
-            },
-            {
-                list: buildConfigList(['superscripts1', 'subscripts5']),
-                relation: NOT,
-                searchIndexIncrement: 1,
-            }
-        ],
-        startIndexIncrement: -2,
-        endIndexIncrement: 1,
-        style: HIGHLIGHT_STYLES[1]
-    },
-    {
         list: buildConfigList(['subscripts1']),
         secondaryList: [
             {
@@ -770,7 +670,6 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         style: HIGHLIGHT_STYLES[15]
     },
     // 4 layer symbol stacks
-    // la sa go
     {
         list: buildConfigList(['superscripts2']),
         secondaryList: [
@@ -840,30 +739,6 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         style: HIGHLIGHT_STYLES[19]
     },
     {
-        list: buildConfigList(['subscripts5']),
-        secondaryList: [
-            {
-                list: buildConfigList(['subscripts3', 'subscripts4']),
-                relation: AND,
-                searchIndexIncrement: -1,
-            }, 
-            {
-                list: buildConfigList(['subscripts1']),
-                relation: AND,
-                searchIndexIncrement: -2,
-            },
-            {
-                list: buildConfigList(['superscripts2']),
-                relation: AND,
-                searchIndexIncrement: -3,
-            }
-        ],
-        startIndexIncrement: -3,
-        endIndexIncrement: 1,
-        style: HIGHLIGHT_STYLES[1]
-    },
-    // ra go
-    {
         list: buildConfigList(['superscripts3']),
         secondaryList: [
             {
@@ -931,30 +806,6 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         endIndexIncrement: 2,
         style: HIGHLIGHT_STYLES[22]
     },
-    {
-        list: buildConfigList(['subscripts5']),
-        secondaryList: [
-            {
-                list: buildConfigList(['subscripts3', 'subscripts4']),
-                relation: AND,
-                searchIndexIncrement: -1,
-            }, 
-            {
-                list: buildConfigList(['subscripts1']),
-                relation: AND,
-                searchIndexIncrement: -2,
-            },
-            {
-                list: buildConfigList(['superscripts3']),
-                relation: AND,
-                searchIndexIncrement: -3,
-            }
-        ],
-        startIndexIncrement: -3,
-        endIndexIncrement: 1,
-        style: HIGHLIGHT_STYLES[1]
-    },
-    // geku sa la go
     {
         list: buildConfigList(['superscripts2']),
         secondaryList: [
@@ -1024,30 +875,6 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         style: HIGHLIGHT_STYLES[25]
     },
     {
-        list: buildConfigList(['superscripts1']),
-        secondaryList: [
-            {
-                list: buildConfigList(['subscripts3', 'subscripts4']),
-                relation: AND,
-                searchIndexIncrement: -1,
-            }, 
-            {
-                list: buildConfigList(['subscripts1']),
-                relation: AND,
-                searchIndexIncrement: -2,
-            },
-            {
-                list: buildConfigList(['superscripts2']),
-                relation: AND,
-                searchIndexIncrement: -3,
-            }
-        ],
-        startIndexIncrement: -3,
-        endIndexIncrement: 1,
-        style: HIGHLIGHT_STYLES[1]
-    },
-    // geku ra go
-    {
         list: buildConfigList(['superscripts3']),
         secondaryList: [
             {
@@ -1114,28 +941,5 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         startIndexIncrement: -2,
         endIndexIncrement: 2,
         style: HIGHLIGHT_STYLES[25]
-    },
-    {
-        list: buildConfigList(['superscripts1']),
-        secondaryList: [
-            {
-                list: buildConfigList(['subscripts3', 'subscripts4']),
-                relation: AND,
-                searchIndexIncrement: -1,
-            }, 
-            {
-                list: buildConfigList(['subscripts1']),
-                relation: AND,
-                searchIndexIncrement: -2,
-            },
-            {
-                list: buildConfigList(['superscripts3']),
-                relation: AND,
-                searchIndexIncrement: -3,
-            }
-        ],
-        startIndexIncrement: -3,
-        endIndexIncrement: 1,
-        style: HIGHLIGHT_STYLES[1]
     },
 ];

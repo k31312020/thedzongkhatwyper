@@ -1,3 +1,4 @@
+import { DICTIONARY } from './dictionary';
 import GameLoop from './game-loop';
 
 import './styles.css';
@@ -9,7 +10,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
     const overlay = document.createElement('div');
     const overlayText = document.createElement('div');
     overlay.classList.add('overlay');
-    overlayText.innerText = 'Device is not supported!';
+    overlayText.innerText = 'Device is not supported! Please try on your PC';
     overlayText.classList.add('overlay-text');
     overlay.appendChild(overlayText);
     document.body.appendChild(overlay);
