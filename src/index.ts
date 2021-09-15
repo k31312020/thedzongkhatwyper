@@ -1,4 +1,3 @@
-import { DICTIONARY } from './dictionary';
 import GameLoop from './game-loop';
 
 import './styles.css';
@@ -17,3 +16,6 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 }
 
 new GameLoop().gameLoop();
+
+// message for devs
+console.log('Hey you found the console! Contribute to this project https://github.com/k31312020/thedzongkhatwyper');

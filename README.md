@@ -33,6 +33,3 @@ ___
 
 ## Liscense
 * GNU General Public License v3.0
-
-## Reach out on Discord
-* https://discord.gg/SzPxpvhh7b
