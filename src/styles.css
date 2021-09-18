@@ -1,3 +1,7 @@
+:root {
+  --score-end: 12rem;
+}
+
 body {
   background-color: #f6f5f5;
   font-size: 0.625rem;
@@ -11,6 +15,49 @@ body {
 
 .game-content {
   display: none;
+}
+
+.score-display {
+  display: flex;
+  justify-content: center;
+  margin-top: 6rem;
+  gap: 2rem;
+  align-items: flex-end;
+}
+
+.score-bar {
+  transition: all 2s;
+  border-radius: 1rem;
+  width: 12rem;
+}
+
+.average-score-bar {
+  background-color: #1688a791;
+  height: 20rem;
+}
+
+.player-score-bar {
+  background-color: #1687a7;
+  animation: growBar 4s;
+}
+
+.score-label {
+  margin-bottom: 1.2rem;
+  font-size: 2rem;
+  color: #1687a7;
+}
+
+.score-value {
+  font-size: 5rem;
+  color: white;
+}
+
+.average-score-value {
+  visibility: hidden;
+}
+
+.player-score-value {
+  color: #1687a7;
 }
 
 .settings {
@@ -177,16 +224,6 @@ body {
   display: "";
 }
 
-.wpm-content {
-  width: 100%;
-  color: #a5a5a5;
-  font-size: 2.5rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .wpm-overlay {
   position: fixed;
   display: none;
@@ -194,15 +231,16 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(218, 218, 218, 0.8);
+  background-color: rgba(218, 218, 218, 0.9);
   z-index: 2;
 }
 
-.wpm-reset-game {
+.reset-game {
+  margin-top: 4rem;
   font-size: 2rem;
-  height: 3.3rem;
+  height: 4rem;
   background-color: #1687a7;
-  border-radius: 5%;
+  border-radius: 2rem;
   cursor: pointer;
   color: white;
   border: none;
@@ -284,6 +322,15 @@ body {
   }
   100% {
     fill: #E6E6E6;
+  }
+}
+
+@keyframes growBar {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: var(--score-end);
   }
 }
 

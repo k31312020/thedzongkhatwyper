@@ -1,9 +1,7 @@
 import {
     NUMBERS_DZO_TO_EN,
     NUMBERS_EN_TO_DZO,
-    SESSION_COMPLETE_MESSAGES,
 } from './constants';
-import { WpmLimits } from './enums';
 
 export function getRandomNumber(limit: number, isIndex?: boolean): number {
     return Math.floor(Math.random() * limit + 1) + (isIndex ? -1 : 0);
@@ -15,21 +13,6 @@ export function wordAnimationEnded(word: HTMLSpanElement): boolean {
     || word.getBoundingClientRect().y
     > word.parentElement.getBoundingClientRect().height
     );
-}
-
-export function sessionCompleteMessage(score: number): string {
-    switch (true) {
-    case score < WpmLimits.VerySlow:
-        return SESSION_COMPLETE_MESSAGES.verySlow;
-    case score > WpmLimits.SlowMin && score < WpmLimits.SlowMax:
-        return SESSION_COMPLETE_MESSAGES.slow;
-    case score > WpmLimits.AverageMin && score < WpmLimits.AverageMax:
-        return SESSION_COMPLETE_MESSAGES.average;
-    case score > WpmLimits.FastMin && score < WpmLimits.FastMax:
-        return SESSION_COMPLETE_MESSAGES.fast;
-    default:
-        return SESSION_COMPLETE_MESSAGES.veryFast;
-    }
 }
 
 export function numInDzo(number: number): string {

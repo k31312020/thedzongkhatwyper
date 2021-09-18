@@ -57,13 +57,15 @@ export default class GameState {
     // eslint-disable-next-line no-undef
     gameModes: NodeListOf<HTMLDivElement> = document.querySelectorAll('.settings-content-text');
 
-    wpmContainer: HTMLDivElement | null = document.querySelector('.wpm-container');
-
     wpmOverlay: HTMLDivElement | null = document.querySelector('.wpm-overlay');
 
-    wpmResetGame: HTMLDivElement | null = document.querySelector('.wpm-reset-game');
+    scoreOverlay: HTMLDivElement | null = document.querySelector('.score-display');
 
-    wpmScoreContainer: HTMLDivElement | null = document.querySelector('.wpm-score');
+    resetGame: HTMLDivElement | null = document.querySelector('.reset-game');
+
+    playerScore: HTMLDivElement | null = document.querySelector('.player-score-value');
+
+    playerScoreBar: HTMLDivElement | null = document.querySelector('.player-score-bar');
 
     wpmValue: HTMLDivElement | null = document.querySelector('.wpm-value');
 

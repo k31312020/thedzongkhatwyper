@@ -436,13 +436,6 @@ export const WORD_GROUPS: Record<string, string[]> = {
 
 export const SPECIAL_KEY_IDS: string[] = ['shiftleft', 'shiftright', 'altright', 'altleft', 'capslock', 'controlleft', 'controlleft'];
 
-export const SESSION_COMPLETE_MESSAGES = {
-    verySlow: 'ཁྱོད་ཀྱི་མགྱོགས་ཚད་འདི་གནམ་མེད་ས་མེད་ཉུང་ཀུ་འདུག',
-    slow: ' ཁྱོད་ཀྱི་་མགྱོགས་ཚད་འདི་ཉུང་ཀུ་འདུག',
-    average: 'ཁྱོད་ཀྱི་མགྱོགས་ཚད་འདི་རན་ཏོག་ཏོ་འདུག',
-    fast: 'ཁྱོད་ཀྱི་མགྱོགས་པར་མཛུབ་གནོན་རྐྱབ་ཚུགས་སྦེ།',
-    veryFast: 'ཁྱོད་རིག་རྩལ་ཅན་ཅིག་ཨིན་མས།',
-};
 
 export const GAME_MODE_SETTINGS: Record<string, {
   totalTime: string,
@@ -469,3 +462,5 @@ export const THEME: Record<ThemeTypes, Theme> = {
         }
     }
 }
+
+export const AVERAGE_SCORE = 35;

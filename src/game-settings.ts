@@ -1,6 +1,6 @@
 import { GAME_MODE_SETTINGS, KEY_COMBOS } from './constants';
 import GameState from './game-state';
-import { countdownDzoTime, numInDzo, sessionCompleteMessage } from './helpers';
+import { countdownDzoTime, numInDzo } from './helpers';
 
 export default class GameSettings {
     private static instance: GameSettings;
@@ -49,8 +49,10 @@ export default class GameSettings {
 
     // Scores are displyed and intervals are stopped right after the timer runs out
     completeSession = (): void => {
-        this.state.wpmContainer.innerText = sessionCompleteMessage(this.state.wpm);
-        this.state.wpmScoreContainer.innerText = `སྐར་ཆ་གཅིག་ནང་ཚིག་ ${numInDzo(this.state.wpm || 0)} མཛུབ་གནོན་རྐྱབ་ཚུགས་སྦེ།`;
+        this.state.playerScore.innerText = numInDzo(this.state.wpm);
+        const playerScoreBarHeight = `${Math.floor((this.state.wpm/35)*20)}rem`;
+        this.state.playerScoreBar.style.height = playerScoreBarHeight;
+        document.documentElement.style.setProperty('--score-end', playerScoreBarHeight);
         this.toggleWpmVisibility(true);
         this.clearAllIntervals();
     }

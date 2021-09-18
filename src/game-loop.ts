@@ -62,7 +62,7 @@ export default class GameLoop {
     };
 
     onWpmResetGame = (): void => {
-        this.state?.wpmResetGame?.addEventListener('click', () => {
+        this.state?.resetGame?.addEventListener('click', () => {
             this.settings.resetGame();
             this.settings.toggleWpmVisibility();
             this.gameLoop();
