@@ -19,7 +19,164 @@ const buildConfigList = (listKeys: string[]):string[] => {
     return list;
 };
 
+const getStyle = (): Record<number, HighlightStyle> => {
+    const windowsPlatform = ['Win16', 'Win32', 'WinCE'];
+    if(windowsPlatform.includes(navigator.platform)) {
+        return HIGHLIGHT_STYLES_WIN;
+    } else {
+        return HIGHLIGHT_STYLES;
+    }
+}
+
 const getTheme = (mode: ThemeTypes = ThemeTypes.light): Theme => THEME[mode];
+
+//  gradients are saparately configured for windows os
+const HIGHLIGHT_STYLES_WIN: Record<number, HighlightStyle> = {
+    1: {
+        gradient: `${getTheme().colors.highlight} 0%, ${getTheme().colors.highlight} 0%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '0.5rem'
+    },
+    2: {
+        gradient: `210deg, ${getTheme().colors.highlight} 76%, ${getTheme().colors.text} 76%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '0.5rem',
+        paddingLeft: '0.2rem'
+    },
+    3: {
+        gradient: `${getTheme().colors.text} 50%, ${getTheme().colors.highlight} 50%`,
+        paddingTop: '0.5rem',
+        paddingLeft: '0.2rem',
+        paddingBottom: '0.5rem'
+    },
+    4: {
+        gradient: `188deg, ${getTheme().colors.highlight} 74%, ${getTheme().colors.text} 74%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '0.5rem'
+    },
+    5: {
+        gradient: `${getTheme().colors.highlight} 82%, ${getTheme().colors.text} 82%`,
+        paddingTop: '0.5rem'
+    },
+    6: {
+        gradient: `${getTheme().colors.highlight} 76%, ${getTheme().colors.text} 76%`,
+        paddingTop: '0.5rem'
+    },
+    7: {
+        gradient: `200deg, ${getTheme().colors.highlight} 82%, ${getTheme().colors.text} 82%`,
+        paddingTop: '0.5rem'
+    },
+    8: {
+        gradient: `146deg ${getTheme().colors.highlight} 61%, ${getTheme().colors.text} 61%`,
+        paddingTop: '0.5rem'
+    },
+    9: {
+        gradient: `${getTheme().colors.highlight} 70%, ${getTheme().colors.text} 70%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '0.5rem'
+    },
+    10: {
+        gradient: `${getTheme().colors.highlight} 65%, ${getTheme().colors.text} 65%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '0.5rem'
+    },
+    11: {
+        gradient: `${getTheme().colors.highlight} 67%, ${getTheme().colors.text} 67%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '0.5rem'
+    },
+    12: {
+        gradient: `${getTheme().colors.highlight} 76%, ${getTheme().colors.text} 76%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '0.5rem'
+    },
+    13: {
+        gradient: `200deg, ${getTheme().colors.highlight} 80%, ${getTheme().colors.text} 80%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '0.5rem',
+        paddingLeft: '0.2rem'
+    },
+    14: {
+        gradient: `${getTheme().colors.highlight} 57%, ${getTheme().colors.text} 57%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '0.5rem'
+    },
+    15: {
+        gradient: `200deg, ${getTheme().colors.highlight} 67%, ${getTheme().colors.text} 67%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '0.5rem'
+    },
+    16: {
+        gradient: `${getTheme().colors.highlight} 77%, ${getTheme().colors.text} 77%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '0.5rem'
+    },
+    17: {
+        gradient: `${getTheme().colors.highlight} 44%, ${getTheme().colors.text} 44%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '1rem'
+    },
+    18: {
+        gradient: `${getTheme().colors.highlight} 68%, ${getTheme().colors.text} 68%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '1rem'
+    },
+    19: {
+        gradient: `${getTheme().colors.highlight} 82%, ${getTheme().colors.text} 82%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '1rem'
+    },
+    20: {
+        gradient: `${getTheme().colors.highlight} 51%, ${getTheme().colors.text} 51%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '1rem'
+    },
+    21: {
+        gradient: `${getTheme().colors.highlight} 65%, ${getTheme().colors.text} 65%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '1rem'
+    },
+    22: {
+        gradient: `${getTheme().colors.highlight} 81%, ${getTheme().colors.text} 81%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '1rem'
+    },
+    23: {
+        gradient: `${getTheme().colors.text} 44%, ${getTheme().colors.highlight} 44% 57%, ${getTheme().colors.text} 57%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '1rem'
+    },
+    24: {
+        gradient: `${getTheme().colors.text} 44%, ${getTheme().colors.highlight} 44% 80%, ${getTheme().colors.text} 80%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '1rem'
+    },
+    25: {
+        gradient: `${getTheme().colors.text} 44%, ${getTheme().colors.highlight} 44% 90%, ${getTheme().colors.text} 90%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '1rem'
+    },
+    26: {
+        gradient: `${getTheme().colors.text} 44%, ${getTheme().colors.highlight} 44% 31%, ${getTheme().colors.text} 31%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '1rem'
+    },
+    27: {
+        gradient: `${getTheme().colors.text} 44%, ${getTheme().colors.highlight} 44% 54%, ${getTheme().colors.text} 54%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '1rem'
+    },
+    28: {
+        gradient: `${getTheme().colors.text} 44%, ${getTheme().colors.highlight} 44% 63%, ${getTheme().colors.text} 63%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '1rem'
+    },
+    29: {
+        gradient: `${getTheme().colors.highlight} 77%, ${getTheme().colors.text} 77%`,
+        paddingTop: '0.5rem',
+        paddingBottom: '1rem'
+    },
+}
 
 const HIGHLIGHT_STYLES: Record<number, HighlightStyle> = {
     1: {
@@ -163,7 +320,7 @@ const HIGHLIGHT_STYLES: Record<number, HighlightStyle> = {
 export const DEFAULT_HIGHLIGHT_CONFIG: SymbolConfig = {
     list: [],
     endIndexIncrement: 1,
-    style: HIGHLIGHT_STYLES[1]
+    style: getStyle()[1]
 }
 
 // css class mapping based on the position of the active symbol 
@@ -186,7 +343,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             }
         ],
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[3]
+        style: getStyle()[3]
     },
     {
         list: WORD_GROUPS.superscripts2,
@@ -203,7 +360,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             }
         ],
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[9]
+        style: getStyle()[9]
     },
     {
         list: WORD_GROUPS.superscripts3,
@@ -220,7 +377,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             }
         ],
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[10]
+        style: getStyle()[10]
     },
     {
         list: WORD_GROUPS.superscripts3,
@@ -237,7 +394,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             }
         ],
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[9]
+        style: getStyle()[9]
     },
     {
         list: WORD_GROUPS.mainSymbolsLong,
@@ -254,7 +411,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             }
         ],
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[2]
+        style: getStyle()[2]
     },
     {
         list: WORD_GROUPS.mainSymbolsShort,
@@ -271,7 +428,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             }
         ],
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[4]
+        style: getStyle()[4]
     },
     {
         list: buildConfigList(['mainSymbolsShort', 'mainSymbolsLong']),
@@ -288,7 +445,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             }
         ],
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[5]
+        style: getStyle()[5]
     },
     {
         list: buildConfigList(['mainSymbolsShort']),
@@ -305,7 +462,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             }
         ],
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[5]
+        style: getStyle()[5]
     },
     {
         list: buildConfigList(['mainSymbolsLong']),
@@ -322,7 +479,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             }
         ],
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[6]
+        style: getStyle()[6]
     },
     {
         list: buildConfigList(['mainSymbolsShort', 'mainSymbolsLong']),
@@ -339,7 +496,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             },
         ],
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[7]
+        style: getStyle()[7]
     },
     {
         list: buildConfigList(['mainSymbolsShort', 'mainSymbolsLong']),
@@ -356,7 +513,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             }
         ],
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[8]
+        style: getStyle()[8]
     },
     {
         list: buildConfigList(['mainSymbolsShort', 'mainSymbolsLong']),
@@ -373,7 +530,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             }
         ],
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[9]
+        style: getStyle()[9]
     },
     // 3 layer symbol stacks
     {
@@ -391,7 +548,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             },
         ],
         endIndexIncrement: 3,
-        style: HIGHLIGHT_STYLES[11]
+        style: getStyle()[11]
     },
     {
         list: buildConfigList(['subscripts3', 'subscripts4', 'subscripts7']),
@@ -409,7 +566,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         ],
         startIndexIncrement: -1,
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[29]
+        style: getStyle()[29]
     },
     {
         list: buildConfigList(['mainSymbolsLong', 'mainSymbolsShort']),
@@ -426,7 +583,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             },
         ],
         endIndexIncrement: 3,
-        style: HIGHLIGHT_STYLES[28]
+        style: getStyle()[28]
     },
     {
         list: buildConfigList(['mainSymbolsLong', 'mainSymbolsShort']),
@@ -443,7 +600,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             },
         ],
         endIndexIncrement: 3,
-        style: HIGHLIGHT_STYLES[23]
+        style: getStyle()[23]
     },
     {
         list: buildConfigList(['subscripts3', 'subscripts4', 'subscripts7']),
@@ -461,7 +618,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         ],
         startIndexIncrement: -1,
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[24]
+        style: getStyle()[24]
     },
     {
         list: buildConfigList(['superscripts3']),
@@ -478,7 +635,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             },
         ],
         endIndexIncrement: 3,
-        style: HIGHLIGHT_STYLES[26]
+        style: getStyle()[26]
     },
     {
         list: buildConfigList(['subscripts1']),
@@ -496,7 +653,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         ],
         startIndexIncrement: -1,
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[25]
+        style: getStyle()[25]
     },
     {
         list: buildConfigList(['superscripts2']),
@@ -513,7 +670,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             },
         ],
         endIndexIncrement: 3,
-        style: HIGHLIGHT_STYLES[23]
+        style: getStyle()[23]
     },
     {
         list: buildConfigList(['subscripts1']),
@@ -531,7 +688,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         ],
         startIndexIncrement: -1,
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[25]
+        style: getStyle()[25]
     },
     {
         list: buildConfigList(['superscripts2']),
@@ -553,7 +710,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             }
         ],
         endIndexIncrement: 3,
-        style: HIGHLIGHT_STYLES[11]
+        style: getStyle()[11]
     },
     {
         list: buildConfigList(['subscripts1']),
@@ -576,7 +733,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         ],
         startIndexIncrement: -1,
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[12]
+        style: getStyle()[12]
     },
     {
         list: buildConfigList(['subscripts1']),
@@ -599,7 +756,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         ],
         startIndexIncrement: -1,
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[13]
+        style: getStyle()[13]
     },
     {
         list: buildConfigList(['superscripts3']),
@@ -621,7 +778,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             }
         ],
         endIndexIncrement: 3,
-        style: HIGHLIGHT_STYLES[14]
+        style: getStyle()[14]
     },
     {
         list: buildConfigList(['subscripts1']),
@@ -644,7 +801,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         ],
         startIndexIncrement: -1,
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[16]
+        style: getStyle()[16]
     },
     {
         list: buildConfigList(['subscripts1']),
@@ -667,7 +824,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         ],
         startIndexIncrement: -1,
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[15]
+        style: getStyle()[15]
     },
     // 4 layer symbol stacks
     {
@@ -690,7 +847,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             }
         ],
         endIndexIncrement: 4,
-        style: HIGHLIGHT_STYLES[17]
+        style: getStyle()[17]
     },
     {
         list: buildConfigList(['subscripts1']),
@@ -713,7 +870,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         ],
         startIndexIncrement: -1,
         endIndexIncrement: 3,
-        style: HIGHLIGHT_STYLES[18]
+        style: getStyle()[18]
     },
     {
         list: buildConfigList(['subscripts3', 'subscripts4']),
@@ -736,7 +893,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         ],
         startIndexIncrement: -2,
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[19]
+        style: getStyle()[19]
     },
     {
         list: buildConfigList(['superscripts3']),
@@ -758,7 +915,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             }
         ],
         endIndexIncrement: 4,
-        style: HIGHLIGHT_STYLES[20]
+        style: getStyle()[20]
     },
     {
         list: buildConfigList(['subscripts1']),
@@ -781,7 +938,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         ],
         startIndexIncrement: -1,
         endIndexIncrement: 3,
-        style: HIGHLIGHT_STYLES[21]
+        style: getStyle()[21]
     },
     {
         list: buildConfigList(['subscripts3', 'subscripts4']),
@@ -804,7 +961,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         ],
         startIndexIncrement: -2,
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[22]
+        style: getStyle()[22]
     },
     {
         list: buildConfigList(['superscripts2']),
@@ -826,7 +983,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             }
         ],
         endIndexIncrement: 4,
-        style: HIGHLIGHT_STYLES[23]
+        style: getStyle()[23]
     },
     {
         list: buildConfigList(['subscripts1']),
@@ -849,7 +1006,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         ],
         startIndexIncrement: -1,
         endIndexIncrement: 3,
-        style: HIGHLIGHT_STYLES[24]
+        style: getStyle()[24]
     },
     {
         list: buildConfigList(['subscripts3', 'subscripts4']),
@@ -872,7 +1029,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         ],
         startIndexIncrement: -2,
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[25]
+        style: getStyle()[25]
     },
     {
         list: buildConfigList(['superscripts3']),
@@ -894,7 +1051,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
             }
         ],
         endIndexIncrement: 4,
-        style: HIGHLIGHT_STYLES[26]
+        style: getStyle()[26]
     },
     {
         list: buildConfigList(['subscripts1']),
@@ -917,7 +1074,7 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         ],
         startIndexIncrement: -1,
         endIndexIncrement: 3,
-        style: HIGHLIGHT_STYLES[27]
+        style: getStyle()[27]
     },
     {
         list: buildConfigList(['subscripts3', 'subscripts4']),
@@ -940,6 +1097,6 @@ export const HIGHLIGHTER_CONFIG: SymbolConfig[] = [
         ],
         startIndexIncrement: -2,
         endIndexIncrement: 2,
-        style: HIGHLIGHT_STYLES[25]
+        style: getStyle()[25]
     },
 ];

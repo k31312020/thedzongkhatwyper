@@ -9,6 +9,10 @@ body {
   overflow: hidden;
 }
 
+.game-content {
+  display: none;
+}
+
 .settings {
   position: absolute;
   top: 4%;
@@ -35,7 +39,7 @@ body {
 
 .main-text-container {
   position: absolute;
-  top: 16vh;
+  top: 14vh;
   left: 50%;
   width: 75%;
   max-height: 6rem;
@@ -188,6 +192,8 @@ body {
   display: none;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   background-color: rgba(218, 218, 218, 0.8);
   z-index: 2;
 }
@@ -294,14 +300,14 @@ body {
 
 @media (min-width: 1200px) { 
   .word-normal {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-left: 2rem;
   }
 }
 
 @media (min-width: 1800px) {
   .word-normal {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-left: 2rem;
   }
 }

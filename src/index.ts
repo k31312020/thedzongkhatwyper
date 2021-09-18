@@ -5,7 +5,10 @@ import './styles.css';
 // Entry point for the game
 
 // Check device
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+
+const isPhone = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+if(isPhone){
     const overlay = document.createElement('div');
     const overlayText = document.createElement('div');
     overlay.classList.add('overlay');
@@ -13,6 +16,11 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
     overlayText.classList.add('overlay-text');
     overlay.appendChild(overlayText);
     document.body.appendChild(overlay);
+}
+
+window.onload = () => {
+    if (isPhone) return;
+    (document.querySelector('.game-content') as HTMLElement).style.display = 'block';
 }
 
 new GameLoop().gameLoop();
