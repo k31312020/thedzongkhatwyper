@@ -24,7 +24,6 @@
 
 # Change Log
 ## 1.0.0 - 2021-9-19
-***
 * deployed version one [@k31312020](https://github.com/k31312020)
 ### Added
 * easy game mode [@k31312020](https://github.com/k31312020)
