@@ -31,6 +31,6 @@
 * interactive onscreen keyboard [@k31312020](https://github.com/k31312020)
 * next symbol keyboard blink [@eldrigo](https://github.com/eldrigo) [@k31312020](https://github.com/k31312020)
 
-# Liscense
+# License
 * GNU General Public License v3.0
 
